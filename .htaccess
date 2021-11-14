@@ -1,0 +1,181 @@
+AddType application/font-woff .woff .woff .woff .woff .woff
+AddType application/font-woff2 .woff2 .woff2 .woff2
+AddType application/java .class .class .class
+AddType application/javascript .js2 .js2 .js2
+AddType application/json .json .json .json
+AddType application/msword .doc .docx .doc .docx .doc .docx
+AddType application/pdf .pdf .pdf .pdf
+AddType application/vnd.ms-access .mdb .mdb .mdb
+AddType application/vnd.ms-excel .xla .xls .xlsx .xlt .xlw .xla .xls .xlsx .xlt .xlw .xla .xls .xlsx .xlt .xlw
+AddType application/vnd.ms-fontobject .eot .eot .eot
+AddType application/vnd.ms-opentype ._otf ._ttf ._otf ._ttf ._otf ._ttf
+AddType application/vnd.ms-powerpoint .pot .pps .ppt .pptx .pot .pps .ppt .pptx .pot .pps .ppt .pptx
+AddType application/vnd.ms-project .mpp .mpp .mpp
+AddType application/vnd.ms-write .wri .wri .wri
+AddType application/vnd.oasis.opendocument.chart .odc .odc .odc
+AddType application/vnd.oasis.opendocument.database .odb .odb .odb
+AddType application/vnd.oasis.opendocument.formula .odf .odf .odf
+AddType application/vnd.oasis.opendocument.graphics .odg .odg .odg
+AddType application/vnd.oasis.opendocument.presentation .odp .odp .odp
+AddType application/vnd.oasis.opendocument.spreadsheet .ods .ods .ods
+AddType application/vnd.oasis.opendocument.text .odt .odt .odt
+AddType application/x-font-otf .otf .otf .otf
+AddType application/x-font-ttf .ttf .ttc .ttf .ttc .ttf .ttc
+AddType application/x-gzip .gz .gzip .gz .gzip .gz .gzip
+AddType application/x-javascript .js .js .js
+AddType application/x-msdownload .exe .exe .exe
+AddType application/x-shockwave-flash .swf .swf .swf
+AddType application/x-tar .tar .tar .tar
+AddType application/zip .zip .zip .zip
+AddType audio/midi .mid .midi .mid .midi .mid .midi
+AddType audio/mpeg .mp3 .m4a .mp3 .m4a .mp3 .m4a
+AddType audio/ogg .ogg .ogg .ogg
+AddType audio/wav .wav .wav .wav
+AddType audio/wma .wma .wma .wma
+AddType audio/x-realaudio .ra .ram .ra .ram .ra .ram
+AddType image/bmp .bmp .bmp .bmp
+AddType image/gif .gif .gif .gif
+AddType image/jpeg .jpg .jpeg .jpe .jpg .jpeg .jpe .jpg .jpeg .jpe
+AddType image/png .png .png .png
+AddType image/svg+xml .svg .svgz .svg .svgz .svg .svgz
+AddType image/tiff .tif .tiff .tif .tiff .tif .tiff
+AddType image/webp .webp .webp .webp
+AddType image/x-icon .ico .ico .ico
+AddType text/css .css .css .css
+AddType text/javascript .js3 .js3 .js3
+AddType text/x-component .htc .htc .htc
+AddType text/x-js .js4 .js4 .js4
+AddType video/asf .asf .asx .wax .wmv .wmx .asf .asx .wax .wmv .wmx .asf .asx .wax .wmv .wmx
+AddType video/avi .avi .avi .avi
+AddType video/divx .divx .divx .divx
+AddType video/mp4 .mp4 .m4v .mp4 .m4v .mp4 .m4v
+AddType video/mpeg .mpeg .mpg .mpe .mpeg .mpg .mpe .mpeg .mpg .mpe
+AddType video/quicktime .mov .qt .mov .qt .mov .qt
+AddType video/webm .webm .webm .webm
+
+
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301,NE]
+Header always set Content-Security-Policy "upgrade-insecure-requests;"
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ read.php?post=$1
+
+#RewriteEngine on
+
+#RewriteCond %{QUERY_STRING} ^name=([^&]+)$
+#RewriteRule ^/?vendor/blog/index\.php$ /blog/%1 [R=301]
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !/vendor/blog/index\.php$
+#RewriteRule ^/?blog/([^/]+)$ /read.php?name=$1 [END]
+# BEGIN W3TC Browser Cache
+<IfModule mod_mime.c>
+</IfModule>
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css A31536000
+    ExpiresByType text/x-component A31536000
+    ExpiresByType application/x-javascript A31536000
+    ExpiresByType application/javascript A31536000
+    ExpiresByType text/javascript A31536000
+    ExpiresByType text/x-js A31536000
+    ExpiresByType video/asf A31536000
+    ExpiresByType video/avi A31536000
+    ExpiresByType image/bmp A31536000
+    ExpiresByType application/java A31536000
+    ExpiresByType video/divx A31536000
+    ExpiresByType application/msword A31536000
+    ExpiresByType application/vnd.ms-fontobject A31536000
+    ExpiresByType application/x-msdownload A31536000
+    ExpiresByType image/gif A31536000
+    ExpiresByType application/x-gzip A31536000
+    ExpiresByType image/x-icon A31536000
+    ExpiresByType image/jpeg A31536000
+    ExpiresByType image/webp A31536000
+    ExpiresByType application/json A31536000
+    ExpiresByType application/vnd.ms-access A31536000
+    ExpiresByType audio/midi A31536000
+    ExpiresByType video/quicktime A31536000
+    ExpiresByType audio/mpeg A31536000
+    ExpiresByType video/mp4 A31536000
+    ExpiresByType video/mpeg A31536000
+    ExpiresByType video/webm A31536000
+    ExpiresByType application/vnd.ms-project A31536000
+    ExpiresByType application/x-font-otf A31536000
+    ExpiresByType application/vnd.ms-opentype A31536000
+    ExpiresByType application/vnd.oasis.opendocument.database A31536000
+    ExpiresByType application/vnd.oasis.opendocument.chart A31536000
+    ExpiresByType application/vnd.oasis.opendocument.formula A31536000
+    ExpiresByType application/vnd.oasis.opendocument.graphics A31536000
+    ExpiresByType application/vnd.oasis.opendocument.presentation A31536000
+    ExpiresByType application/vnd.oasis.opendocument.spreadsheet A31536000
+    ExpiresByType application/vnd.oasis.opendocument.text A31536000
+    ExpiresByType audio/ogg A31536000
+    ExpiresByType application/pdf A31536000
+    ExpiresByType image/png A31536000
+    ExpiresByType application/vnd.ms-powerpoint A31536000
+    ExpiresByType audio/x-realaudio A31536000
+    ExpiresByType image/svg+xml A31536000
+    ExpiresByType application/x-shockwave-flash A31536000
+    ExpiresByType application/x-tar A31536000
+    ExpiresByType image/tiff A31536000
+    ExpiresByType application/x-font-ttf A31536000
+    ExpiresByType application/vnd.ms-opentype A31536000
+    ExpiresByType audio/wav A31536000
+    ExpiresByType audio/wma A31536000
+    ExpiresByType application/vnd.ms-write A31536000
+    ExpiresByType application/font-woff A31536000
+    ExpiresByType application/font-woff2 A31536000
+    ExpiresByType application/vnd.ms-excel A31536000
+    ExpiresByType application/zip A31536000
+</IfModule>
+<IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/css text/x-component application/x-javascript application/javascript text/javascript text/x-js text/html text/richtext text/plain text/xsd text/xsl text/xml image/bmp application/java application/msword application/vnd.ms-fontobject application/x-msdownload image/x-icon application/json application/vnd.ms-access video/webm application/vnd.ms-project application/x-font-otf application/vnd.ms-opentype application/vnd.oasis.opendocument.database application/vnd.oasis.opendocument.chart application/vnd.oasis.opendocument.formula application/vnd.oasis.opendocument.graphics application/vnd.oasis.opendocument.presentation application/vnd.oasis.opendocument.spreadsheet application/vnd.oasis.opendocument.text audio/ogg application/pdf application/vnd.ms-powerpoint image/svg+xml application/x-shockwave-flash image/tiff application/x-font-ttf application/vnd.ms-opentype audio/wav application/vnd.ms-write application/font-woff application/font-woff2 application/vnd.ms-excel
+    <IfModule mod_mime.c>
+        # DEFLATE by extension
+        AddOutputFilter DEFLATE js css htm html xml
+    </IfModule>
+</IfModule>
+<FilesMatch "\.(css|htc|less|js|js2|js3|js4|CSS|HTC|LESS|JS|JS2|JS3|JS4)$">
+    FileETag MTime Size
+    <IfModule mod_headers.c>
+         Header unset Set-Cookie
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(html|htm|rtf|rtx|txt|xsd|xsl|xml|HTML|HTM|RTF|RTX|TXT|XSD|XSL|XML)$">
+    FileETag MTime Size
+</FilesMatch>
+<FilesMatch "\.(asf|asx|wax|wmv|wmx|avi|bmp|class|divx|doc|docx|eot|exe|gif|gz|gzip|ico|jpg|jpeg|jpe|webp|json|mdb|mid|midi|mov|qt|mp3|m4a|mp4|m4v|mpeg|mpg|mpe|webm|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|png|pot|pps|ppt|pptx|ra|ram|svg|svgz|swf|tar|tif|tiff|ttf|ttc|_ttf|wav|wma|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|zip|ASF|ASX|WAX|WMV|WMX|AVI|BMP|CLASS|DIVX|DOC|DOCX|EOT|EXE|GIF|GZ|GZIP|ICO|JPG|JPEG|JPE|WEBP|JSON|MDB|MID|MIDI|MOV|QT|MP3|M4A|MP4|M4V|MPEG|MPG|MPE|WEBM|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|PNG|POT|PPS|PPT|PPTX|RA|RAM|SVG|SVGZ|SWF|TAR|TIF|TIFF|TTF|TTC|_TTF|WAV|WMA|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW|ZIP)$">
+    FileETag MTime Size
+    <IfModule mod_headers.c>
+         Header unset Set-Cookie
+    </IfModule>
+</FilesMatch>
+<FilesMatch "\.(bmp|class|doc|docx|eot|exe|ico|json|mdb|webm|mpp|otf|_otf|odb|odc|odf|odg|odp|ods|odt|ogg|pdf|pot|pps|ppt|pptx|svg|svgz|swf|tif|tiff|ttf|ttc|_ttf|wav|wri|woff|woff2|xla|xls|xlsx|xlt|xlw|BMP|CLASS|DOC|DOCX|EOT|EXE|ICO|JSON|MDB|WEBM|MPP|OTF|_OTF|ODB|ODC|ODF|ODG|ODP|ODS|ODT|OGG|PDF|POT|PPS|PPT|PPTX|SVG|SVGZ|SWF|TIF|TIFF|TTF|TTC|_TTF|WAV|WRI|WOFF|WOFF2|XLA|XLS|XLSX|XLT|XLW)$">
+    <IfModule mod_headers.c>
+         Header unset Last-Modified
+    </IfModule>
+</FilesMatch>
+<IfModule mod_headers.c>
+    Header set Referrer-Policy "no-referrer-when-downgrade"
+</IfModule>
+# END W3TC Browser Cache
+# BEGIN WordPress
+# The directives (lines) between "BEGIN WordPress" and "END WordPress" are
+# dynamically generated, and should only be modified via WordPress filters.
+# Any changes to the directives between these markers will be overwritten.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . err/404.html [L]
+</IfModule>
+# END WordPress

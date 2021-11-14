@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Create New Post</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" href="icon.ico">
+</head>
+
+<body>
+
+	<div class="container">
+		<form action="upload.php" method="post" enctype="multipart/form-data">
+		
+			<input type="text" placeholder="Directory Name" name="post_title" id="post_title" pattern="[a-z-]{1,}" title="lowercase letters (a-z) and hyphens (-)." required autocomplete="off"/>
+			
+
+			<label for="post_files">Select Files</label>
+			<input type="file" name="post_files[]" id="post_files" onchange="javascript:updateList()" hidden multiple required/>
+
+			<div id="post_files_list"></div>
+
+			<input type="submit" value="Upload!" name="post_submit"/>
+
+		</form>
+	</div>
+
+</body>
+</html>
