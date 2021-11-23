@@ -53,7 +53,7 @@ if (file_exists($file)):
 		</div>
 		<div class="article">
 			<?php
-			include('misc/Parsedown.php');
+			include('etc/Parsedown.php');
 			$html = file_get_contents('posts/' . $post . '.md');
 			$Parsedown = new Parsedown();
 			echo $Parsedown->text($html);

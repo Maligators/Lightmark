@@ -48,8 +48,8 @@
 		</div>
 	</div>
 	<div class="about">
-		<h4>Hello World!</h4>
-		<p>My name is Dovid Friedman. I live in Israel, and  My address is 127.0.0.1</p>
+		<h2>Hello World!</h2>
+		<p>My name is Dovid Friedman,<br>I'm a 13 year old Programmer and Hacker living in Israel.<br>I know Python, Web and PHP, plus I also enjoy tinkering with stuff and am steadily piling up trash on my desk.<br>This website will be my cozy little home on the internet, where I'll be sharing random thoughts, open-source projects, and other crap of mine!</p>
 	</div>
 	<script src="/js/prism.js"></script>
 </body>
