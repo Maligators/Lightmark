@@ -16,20 +16,20 @@ particlesJS('particles-js',
   {
     "particles": {
       "number": {
-        "value": 15,
+        "value": 16,
         "density": {
-          "enable": true,
-          "value_area": 600
+          "enable": false,
+          "value_area": 400
         }
       },
       "color": {
-        "value": "#00ff00"
+        "value": "#000000"
       },
       "shape": {
         "type": "circle",
         "stroke": {
-          "width": 0,
-          "color": "#000000"
+          "width": 3,
+          "color": "#00fff00"
         },
         "polygon": {
           "nb_sides": 11
@@ -41,7 +41,7 @@ particlesJS('particles-js',
         }
       },
       "opacity": {
-        "value": 0,
+        "value": 1,
         "random": false,
         "anim": {
           "enable": false,
@@ -62,16 +62,16 @@ particlesJS('particles-js',
       },
       "line_linked": {
         "enable": true,
-        "distance": 205.18162519630343,
+        "distance": 256,
         "color": "#00ff00",
-        "opacity": 0.3500495903586343,
-        "width": 1.8939842325812624
+        "opacity": 0.5,
+        "width": 3.2
       },
       "move": {
         "enable": true,
-        "speed": 6,
+        "speed": 1.8,
         "direction": "none",
-        "random": false,
+        "random": true,
         "straight": false,
         "out_mode": "out",
         "bounce": false,
@@ -83,23 +83,23 @@ particlesJS('particles-js',
       }
     },
     "interactivity": {
-      "detect_on": "canvas",
+      "detect_on": "window",
       "events": {
         "onhover": {
           "enable": true,
-          "mode": "bubble"
+          "mode": "grab"
         },
         "onclick": {
-          "enable": true,
+          "enable": false,
           "mode": "bubble"
         },
         "resize": true
       },
       "modes": {
         "grab": {
-          "distance": 400,
+          "distance": 256,
           "line_linked": {
-            "opacity": 1
+            "opacity": 0.5
           }
         },
         "bubble": {

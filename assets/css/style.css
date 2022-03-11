@@ -5,6 +5,27 @@ body{
 	background:  #000000;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: "Courier New";
+    line-height: 1.45;
+}
+img{
+    width: 35%;
+    display: block;
+    padding: 10px 0px;
+}
+pre,
+code {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+}
+pre{
+    padding: .5rem;
+    line-height: 1.25;
+    overflow-x: scroll;
+    background-color: #333;
+}
+blockquote{
+    border-left: 3px solid #01ff70;
+    padding-left: 1rem;
 }
 #particles-js canvas{
     display: block;
@@ -40,7 +61,7 @@ body{
     width: 100%;
     z-index: 99;
     position: static;
-    background-color: #000000;
+    background-color: transparent;
     margin-left: 12vw;
     display: inline-block;
     list-style: none;
@@ -48,6 +69,7 @@ body{
 .menu.sticky{
     position: fixed;
     top: -17;
+    background-color: #000000;
 }
 .menu a{
     text-decoration: none;
@@ -114,6 +136,10 @@ body{
 	text-decoration: none;
 	color: #00ff00;
 }
+#post-date{
+    font-size: 0.9vw;
+    margin: 0;
+}
 .sidebar{
     background: #222222;
     position: fixed;
@@ -165,4 +191,7 @@ body{
 .about{
     margin-left: 13vw;
     color: #00ff00;
+}
+#shielded-logo{
+    width: auto;
 }
